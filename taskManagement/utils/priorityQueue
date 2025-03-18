@@ -1,0 +1,8 @@
+const FastPriorityQueue = require('fastpriorityqueue');
+
+const taskQueue = new FastPriorityQueue((a, b) => {
+  const priorityOrder = { high: 3, medium: 2, low: 1 };
+  return priorityOrder[a.priority] > priorityOrder[b.priority];
+});
+
+module.exports = { taskQueue };
